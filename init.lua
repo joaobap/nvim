@@ -19,3 +19,4 @@ vim.opt.clipboard = 'unnamedplus'
 
 vim.keymap.set('i', 'jk', '<esc>')
 
+require('joao.plugins')
