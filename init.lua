@@ -16,6 +16,7 @@ vim.opt.tabstop = 4
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.termguicolors = true
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.shell = 'fish'
 
 vim.keymap.set('i', 'jk', '<esc>')
 
