@@ -13,12 +13,12 @@ packer.startup(function(use)
     use 'HerringtonDarkholme/yats.vim'
     use 'rust-lang/rust.vim'
     use { 'dracula/vim', as = 'dracula' }
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = { {'nvim-lua/plenary.nvim'} } }
     use {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
         'neovim/nvim-lspconfig',
     }
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = { {'nvim-lua/plenary.nvim'} } }
 end)
 
 vim.cmd [[colorscheme dracula]]
