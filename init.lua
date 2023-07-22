@@ -19,4 +19,6 @@ vim.opt.clipboard = 'unnamedplus'
 
 vim.keymap.set('i', 'jk', '<esc>')
 
+vim.g.delimitMate_expand_cr = true
+
 require('joao.plugins')
