@@ -17,6 +17,7 @@ vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.termguicolors = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.shell = 'fish'
+vim.opt.completeopt = "menuone,noinsert,noselect"
 
 vim.keymap.set('i', 'jk', '<esc>')
 

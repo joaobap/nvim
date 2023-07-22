@@ -14,6 +14,8 @@ packer.startup(function(use)
     use 'rust-lang/rust.vim'
     use { 'dracula/vim', as = 'dracula' }
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = { {'nvim-lua/plenary.nvim'} } }
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
     use {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',

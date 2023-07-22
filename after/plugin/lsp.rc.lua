@@ -21,15 +21,25 @@ end
 
 
 local lspconfig = require('lspconfig')
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+lspconfig.flow.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
 
 lspconfig.tsserver.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'javascript' },
 }
 lspconfig.pyright.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
 }
 lspconfig.rust_analyzer.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     settings = {
         ['rust-analyzer']  = {}
     }
