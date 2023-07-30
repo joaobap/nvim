@@ -19,6 +19,20 @@ local on_attach = function(_, _)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 end
 
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = {
+        spacing = 4
+    },
+    signs = true,
+    update_in_insert = false,
+    float = {
+            prefix = function(diagnostic, i, total)
+                return "["..diagnostic.user_data.lsp.code.."] "
+            end
+        },
+  }
+)
 
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -44,3 +58,4 @@ lspconfig.rust_analyzer.setup {
         ['rust-analyzer']  = {}
     }
 }
+

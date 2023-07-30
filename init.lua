@@ -13,6 +13,7 @@ vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
+vim.opt.relativenumber = true
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.termguicolors = true
 vim.opt.clipboard = 'unnamedplus'
@@ -24,3 +25,4 @@ vim.keymap.set('i', 'jk', '<esc>')
 vim.g.delimitMate_expand_cr = true
 
 require('joao.plugins')
+
