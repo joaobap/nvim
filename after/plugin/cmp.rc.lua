@@ -1,6 +1,4 @@
-local status, cmp = pcall(require, "cmp")
-if (not status) then return end
-
+local cmp = require('cmp')
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
