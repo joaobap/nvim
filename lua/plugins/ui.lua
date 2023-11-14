@@ -1,14 +1,16 @@
 return {
     {
-        'morhetz/gruvbox',
+        'craftzdog/solarized-osaka.nvim',
         config = function()
-            vim.g.gruvbox_contrast_dark = "hard"
-            vim.g.gruvbox_italic = true
-            vim.cmd([[colorscheme gruvbox]])
+            vim.cmd([[colorscheme solarized-osaka-night]])
         end
     },
     {
         'nvim-lualine/lualine.nvim',
-        opts = {}
+        opts = {
+            options = {
+                section_separators = { left = '', right = ''},
+            }
+        }
     }
 }
