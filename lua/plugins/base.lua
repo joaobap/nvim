@@ -1,5 +1,4 @@
 return {
-    'wbthomason/packer.nvim',
     'Raimondi/delimitMate',
     'pangloss/vim-javascript',
     'HerringtonDarkholme/yats.vim',
