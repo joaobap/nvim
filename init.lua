@@ -1,4 +1,6 @@
 vim.g.mapleader = ','
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
@@ -13,11 +15,12 @@ vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
+vim.opt.cursorline = false
 vim.opt.relativenumber = true
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.termguicolors = true
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.shell = 'fish'
+vim.opt.shell = 'zsh'
 vim.opt.completeopt = "menuone,noinsert,noselect"
 
 vim.keymap.set('i', 'jk', '<esc>')
@@ -39,4 +42,3 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins')
 
-vim.cmd([[colorscheme habamax]])

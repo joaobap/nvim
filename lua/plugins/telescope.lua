@@ -1,12 +1,33 @@
 return {
     {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make',
+    },
+    {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',
         dependencies = { 'nvim-lua/plenary.nvim' },
+        extensions = {
+            fzf = {
+                fuzzy = true,
+                override_generic_sorter = true,
+                override_file_sorter = true,
+                case_mode = "smart_case",
+            },
+
+        },
         config = function()
-            telescope = require('telescope').setup({
+            local telescope = require('telescope')
+            telescope.load_extension('fzf')
+            telescope.setup({
                 defaults = {
                     path_display = { 'truncate' }
+                },
+                pickers = {
+                    lsp_references = {
+                        layout_strategy = "horizontal",
+                        show_line = false,
+                    }
                 }
             })
             builtin = require('telescope.builtin')
@@ -15,5 +36,6 @@ return {
             vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
         end
+
     },
 }
