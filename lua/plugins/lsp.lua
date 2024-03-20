@@ -1,11 +1,11 @@
 local on_attach = function(_, _)
-            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
-        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
-        vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
+    vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, {})
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
     end
 
     return {
@@ -66,26 +66,37 @@ local on_attach = function(_, _)
             end,
         },
         {
+            "folke/trouble.nvim",
+            dependencies = { "nvim-tree/nvim-web-devicons" },
+            config = function()
+                vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
+                vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
+                vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
+                vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
+                vim.keymap.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
+            end,
+        },
+        {
             'hrsh7th/nvim-cmp',
             dependencies = { 'hrsh7th/cmp-nvim-lsp' },
             config = function()
                 local cmp = require('cmp')
-            cmp.setup({
-                mapping = cmp.mapping.preset.insert({
-                    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-Space>'] = cmp.mapping.complete(),
-                    ['<C-e>'] = cmp.mapping.close(),
-                    ['<CR>'] = cmp.mapping.confirm({
-                        behavior = cmp.ConfirmBehavior.Replace,
-                        select = true
+                cmp.setup({
+                    mapping = cmp.mapping.preset.insert({
+                        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+                        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                        ['<C-Space>'] = cmp.mapping.complete(),
+                        ['<C-e>'] = cmp.mapping.close(),
+                        ['<CR>'] = cmp.mapping.confirm({
+                            behavior = cmp.ConfirmBehavior.Replace,
+                            select = true
+                        }),
                     }),
-                }),
-                sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'buffer' },
-                }),
-            })
+                    sources = cmp.config.sources({
+                        { name = 'nvim_lsp' },
+                        { name = 'buffer' },
+                    }),
+                })
         end,
     }
 }
