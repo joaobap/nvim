@@ -17,8 +17,8 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.cursorline = false
 vim.opt.relativenumber = true
+vim.opt.termguicolors = true 
 vim.opt.backspace = { 'start', 'eol', 'indent' }
-vim.opt.termguicolors = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.shell = 'zsh'
 vim.opt.completeopt = "menuone,noinsert,noselect"
@@ -42,3 +42,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins')
 
+vim.cmd([[colorscheme lunaperche]])
