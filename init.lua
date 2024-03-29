@@ -22,6 +22,7 @@ vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.shell = 'zsh'
 vim.opt.completeopt = "menuone,noinsert,noselect"
+vim.opt.signcolumn = 'yes'
 
 vim.keymap.set('i', 'jk', '<esc>')
 
