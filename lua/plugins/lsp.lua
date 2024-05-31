@@ -22,13 +22,14 @@ local on_attach = function(_, _)
                     'pyright',
                     'rust_analyzer',
                     'lua_ls',
+                    'eslint'
                 },
                 automatic_installation = true,
             }
         },
         {
             'neovim/nvim-lspconfig',
-             config = function()
+            config = function()
                 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
                 vim.lsp.diagnostic.on_publish_diagnostics, {
                     virtual_text = {
@@ -63,6 +64,9 @@ local on_attach = function(_, _)
                         ['rust-analyzers'] = {}
                     }
                 })
+                lspconfig['eslint'].setup{
+                    capabilities = capabilities
+                }
             end,
         },
         {

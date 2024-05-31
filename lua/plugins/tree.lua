@@ -1,18 +1,9 @@
 return {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
     dependencies = {
+      "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-        require("nvim-tree").setup {
-            view = {
-                width = 45,
-            },
-            filters = {
-                dotfiles = true,
-            },
-        }
-            vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<cr>')
-    end,
+      "MunifTanjim/nui.nvim",
+    }
 }
