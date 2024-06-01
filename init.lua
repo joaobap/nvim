@@ -26,8 +26,6 @@ vim.opt.signcolumn = 'yes'
 
 vim.keymap.set('i', 'jk', '<esc>')
 
-vim.g.delimitMate_expand_cr = true
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
