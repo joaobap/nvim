@@ -1,26 +1,17 @@
+-- We don't need no syntax
+vim.cmd([[syntax off]])
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        client.server_capabilities.semanticTokensProvider = nil
+    end,
+});
+
 return {
-    {
-        "f-person/auto-dark-mode.nvim",
-        dependencies = { 'folke/tokyonight.nvim' },
-        config = {
-            update_interval = 1000,
-            set_dark_mode = function()
-                vim.cmd([[colorscheme tokyonight-moon]])
-            end,
-            set_light_mode = function()
-                vim.cmd([[colorscheme tokyonight-day]])
-            end,
-        },
-    },
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        opts = {}
-    },
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
-        opts = {},
+        opts = {}
     },
 }
 

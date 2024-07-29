@@ -1,5 +1,5 @@
 return {
-    'nvim-treesitter/nvim-treesitter',
+    -- 'nvim-treesitter/nvim-treesitter',
     { 'echasnovski/mini.ai', opts = {} },
     { 'echasnovski/mini.pairs', opts = {} },
     'rust-lang/rust.vim',
