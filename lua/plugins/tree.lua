@@ -1,11 +1,25 @@
-local HEIGHT_RATIO = 0.8  -- You can change this
-local WIDTH_RATIO = 0.5   -- You can change this too
+local HEIGHT_RATIO = 0.8
+local WIDTH_RATIO = 0.5
+
+local function open_nvim_tree(data)
+    local directory = vim.fn.isdirectory(data.file) == 1
+    if not directory then
+        return
+    end
+
+    vim.cmd.cd(data.file)
+    require("nvim-tree.api").tree.open()
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 return {
     {
         'nvim-tree/nvim-tree.lua',
         config = function()
             require('nvim-tree').setup({
+                hijack_netrw = true,
+                disable_netrw = true,
                 view = {
                     float = {
                         enable = true,
