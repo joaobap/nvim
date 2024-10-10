@@ -17,10 +17,10 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.cursorline = false 
 vim.opt.relativenumber = true
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.shell = 'zsh'
+vim.opt.shell = 'fish'
 vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.signcolumn = 'yes'
 
@@ -38,6 +38,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
 
 require('lazy').setup('plugins')
 
