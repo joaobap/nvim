@@ -15,16 +15,18 @@ vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
-vim.opt.cursorline = false 
+vim.opt.cursorline = true
 vim.opt.relativenumber = true
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.shell = 'fish'
 vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.signcolumn = 'yes'
 
---vim.keymap.set('i', 'jk', '<esc>')
+vim.cmd('color retrobox')
+
+vim.keymap.set('i', 'jk', '<esc>')
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
