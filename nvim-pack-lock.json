@@ -20,6 +20,14 @@
       "rev": "0d3c9cf",
       "src": "https://github.com/echasnovski/mini.ai"
     },
+    "mini.files": {
+      "rev": "22c64f0",
+      "src": "https://github.com/nvim-mini/mini.files"
+    },
+    "mini.icons": {
+      "rev": "efc85e4",
+      "src": "https://github.com/nvim-mini/mini.icons"
+    },
     "mini.pairs": {
       "rev": "b316e68",
       "src": "https://github.com/echasnovski/mini.pairs"

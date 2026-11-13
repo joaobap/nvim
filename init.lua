@@ -25,7 +25,7 @@ vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.signcolumn = 'yes'
 vim.keymap.set('i', 'jk', '<esc>')
 
-vim.cmd('color sorbet')
+vim.cmd('color catppuccin')
 
 vim.pack.add({
     { src = 'https://github.com/ruanyl/vim-gh-line' },
@@ -40,14 +40,16 @@ vim.pack.add({
     { src = 'https://github.com/hrsh7th/nvim-cmp' },
     { src = 'https://github.com/nvim-lua/plenary.nvim' }, -- dependency of: telescope
     { src = 'https://github.com/BurntSushi/ripgrep' }, -- dependency of: telescope
-    { src = 'https://github.com/nvim-tree/nvim-web-devicons' }, -- dependency of: telescope
+    { src = 'https://github.com/nvim-mini/mini.icons'},
+--    { src = 'https://github.com/nvim-tree/nvim-web-devicons' }, -- dependency of: telescope
     { src = 'https://github.com/nvim-telescope/telescope.nvim' },
     { src = 'https://github.com/nvim-tree/nvim-tree.lua' },
     { src = 'https://github.com/folke/trouble.nvim' },
+    { src = 'https://github.com/nvim-mini/mini.icons'},
+    { src = 'https://github.com/nvim-mini/mini.files' },
 })
 
 require('joao.utils').setup()
 require('joao.telescope').setup()
 require('joao.lsp').setup()
 require('joao.tree').setup()
-

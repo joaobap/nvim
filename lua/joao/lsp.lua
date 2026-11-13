@@ -9,13 +9,15 @@ return {
             },
             automatic_installation = true,
         })
-        vim.diagnostic.config({ virtual_text = true })
+
         vim.lsp.config('ts_ls', { filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'javascript' } })
         vim.lsp.config('eslint', {})
         vim.lsp.config('lua_ls', { settings = { Lua = { diagnostics = { globals = { "vim" } } } } })
         vim.lsp.enable('ts_ls')
         vim.lsp.enable('eslint')
         vim.lsp.enable('lua_ls')
+
+        vim.diagnostic.config({ virtual_text = true })
 
         -- Auto completions
         local cmp = require('cmp')
@@ -35,7 +37,6 @@ return {
                 { name = 'buffer' },
             }),
         })
-
     end
 }
 
